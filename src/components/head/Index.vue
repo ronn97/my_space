@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue';
 import R from '@/assets/img/R.vue';
+import AutoLightVue from './autolight/AutoLight.vue';
 const items = ref([]);
 items.value = [
     {
@@ -26,18 +27,26 @@ console.log(items.value)
                     {{ item.name }}
                 </RouterLink>
             </template>
+            <AutoLightVue />
         </div>
     </div>
 </template>
 
 <style lang="scss" scoped>
 #head {
-    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
     height: 0.6rem;
     font-size: 0.24rem;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: space-between;
+    z-index: 10;
+    background-color: #fff;
 
     .head_right,
     .head_left {

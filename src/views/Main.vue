@@ -31,12 +31,15 @@ export default defineComponent({
 <style lang="scss">
 #body {
   width: 100vw;
-  height: 100vh;
+  overflow-x: hidden;
+  // height: 100vh;
 
   #main {
     width: 10rem;
+    max-width: 100vw;
     font-size: 0.2rem;
-    min-height: 8rem;
+    min-height: 1rem;
+    padding: 0.6rem 0 1rem;
     margin: 0 auto;
   }
 }

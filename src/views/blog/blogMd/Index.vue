@@ -9,8 +9,11 @@ export default defineComponent({
         const str = ref();
 
         const unMdByRoute = async function (callback) {
-            const mdhtml = import(/* @vite-ignore */ `./${route.params.md}.md`)
+            const mdFile = import.meta.glob('./*.md')
+            const mdhtml = mdFile[`./${route.params.md}.md`]()
             callback(await mdhtml)
+            // const mdhtml = import(/* @vite-ignore */ `./${route.params.md}.md`)
+            // callback(await mdhtml)
         }
         unMdByRoute(target => {
             console.log(target.html)
@@ -30,11 +33,10 @@ export default defineComponent({
 
 <style lang="scss">
 .markdown-body {
-    margin-top: 10px;
     box-sizing: border-box;
     min-width: 200px;
     max-width: 100%;
-    margin: 10px auto;
+    margin: 0px auto;
     font-size: 0.2rem;
     padding: 15px 45px;
 }
