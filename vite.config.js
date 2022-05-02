@@ -1,10 +1,16 @@
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import path from 'path';
+const mdPlugin = require('vite-plugin-markdown')
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [
+    vue(),
+    mdPlugin.plugin({
+      mode: ['html']
+    })
+  ],
   resolve: {
     alias: {
       // 键必须以斜线开始和结束
