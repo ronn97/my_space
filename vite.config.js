@@ -19,7 +19,7 @@ export default defineConfig({
     }
   },
   server: {
-    port: 8000, // 本地服务端口
+    port: 8001, // 本地服务端口
     // host: "test.zhuxingyun.com",
     open: true, //在服务器启动时自动在浏览器中打开应用程序。当此值为字符串时，会被用作 URL 的路径名。
     strictPort: true, // 设为 true 时若端口已被占用则会直接退出，而不是尝试下一个可用端口

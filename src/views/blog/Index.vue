@@ -1,16 +1,17 @@
 <script >
-import { defineComponent } from 'vue'
+import { defineComponent, reactive } from 'vue';
+import moment from 'moment';
 
 export default defineComponent({
     setup() {
         const mdRouter = reactive({
             BlogRoute: [
                 {
-                    path: 'bar',
-                    name: '创建Vue3模版',
+                    path: 'start',
+                    title: '创建Vue3模版',
                     desc: '一个项目关于创建Vue-Vite-template',
-                    // time: 'Feb 19',
-                    // readTime: '1min'
+                    data: moment().format('YYYY-MM-DD'),
+                    readTime: '1min'
                 }
             ]
         })
@@ -23,6 +24,13 @@ export default defineComponent({
 </script>
 <template>
     <div class="blogs">
-        this is blog
+        <!-- this is blog -->
+        <Title title="Blogs" />
+        <div class="post-item" v-for="(item, index) in mdRouter.BlogRoute" :key="index">
+            <RouterLink :to="'/blog/' + item.path">{{ item.title }}</RouterLink>
+            <div class="other">
+                <span>{{ item.data }} · <span class="readTime">{{ item.readTime }}</span></span>
+            </div>
+        </div>
     </div>
 </template> 

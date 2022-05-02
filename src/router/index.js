@@ -10,10 +10,24 @@ const routes = [{
     path: '/',
     component: () => import('@/views/Main.vue'),
     redirect: "/about",
-    children: [{
-        path: '/about',
-        component: () => import('@/views/about/About.vue')
-    }]
+    children: [
+        {
+            path: '/about',
+            component: () => import('@/views/about/Index.vue')
+        },
+        {
+            path: '/blog',
+            component: () => import('@/views/blog/Index.vue'),
+        },
+        {
+            path: '/blog/:md',
+            component: () => import('@/views/blog/blogMd/Index.vue'),
+        },
+        {
+            path: '/project',
+            component: () => import('@/views/project/Index.vue')
+        },
+    ]
 
 }]
 

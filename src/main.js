@@ -3,6 +3,7 @@ import App from './App.vue'
 import Router from './router'
 import '@/assets/js/adaptive.js'
 import '@/assets/css/rest.css'
+import '@/assets/css/markdown.css'
 import '@/assets/css/main.css'
 
 /* 挂接 */

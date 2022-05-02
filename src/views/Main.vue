@@ -8,28 +8,36 @@ export default defineComponent({
     Foot
   },
 
-  setup() {
-    return {
-      Head
-    }
-  }
+  // setup() {
+  //   return {
+  //     Head
+  //   }
+  // }
 });
 </script>
 
 <template>
-  <div id="main">
+  <div id="body">
 
     <Head />
-    <!-- <div>我是main</div> -->
-    <router-view></router-view>
+    <div id="main">
+      <router-view></router-view>
+    </div>
     <Foot />
   </div>
 </template>
 
 
-<style>
-#main {
+<style lang="scss">
+#body {
   width: 100vw;
   height: 100vh;
+
+  #main {
+    width: 10rem;
+    font-size: 0.2rem;
+    min-height: 8rem;
+    margin: 0 auto;
+  }
 }
 </style>
