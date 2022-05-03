@@ -1,8 +1,10 @@
 <script>
-import { defineComponent, reactive } from 'vue'
+import { defineComponent, reactive, onMounted, ref } from 'vue'
 import Head from '@/components/head/Index.vue';
 import Foot from '@/components/foot/Index.vue';
 import BackInteract from '@/components/backinteract/Index.vue';
+
+import GLOBE from 'vanta/dist/vanta.globe.min';
 export default defineComponent({
   components: {
     Head,
@@ -10,16 +12,29 @@ export default defineComponent({
     BackInteract
   },
 
-  // setup() {
-  //   return {
-  //     Head
-  //   }
-  // }
+  setup() {
+    const vantaRef = ref(null) //核心
+    onMounted(() => {
+      GLOBE({
+        el: '#app',
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.00,
+        minWidth: 200.00,
+        scale: 1.00,
+        scaleMobile: 1.00
+      })
+    });
+    return {
+      vantaRef
+    }
+  }
 });
 </script>
 
 <template>
-  <div id="body">
+  <div id="body" ref="vantaRef">
 
     <Head />
     <div id="main">
@@ -34,8 +49,8 @@ export default defineComponent({
 <style lang="scss">
 #body {
   width: 100vw;
-  overflow-x: hidden;
-  // height: 100vh;
+  height: 100vh;
+  overflow: auto;
 
   #main {
     width: 10rem;

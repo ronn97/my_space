@@ -129,6 +129,8 @@ export default defineComponent({
     font-size: 0.24rem;
     padding: 0.1rem;
     border-radius: 4px;
+    background-color: var(--color-bg);
+    color: var(--color-contrast-high);
 
     .btn {
         margin-left: 0.15rem;
