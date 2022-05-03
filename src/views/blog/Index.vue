@@ -23,11 +23,13 @@ export default defineComponent({
 })
 </script>
 <template>
-    <div class="blogs">
+    <div class="blogs main_cont">
         <!-- this is blog -->
         <Title title="Blogs" />
         <div class="post-item" v-for="(item, index) in mdRouter.BlogRoute" :key="index">
-            <RouterLink :to="'/blog/' + item.path">{{ item.title }}</RouterLink>
+            <RouterLink :to="'/blog/' + item.path">
+                <h2> {{ item.title }}</h2>
+            </RouterLink>
             <div class="other">
                 <span>{{ item.data }} · <span class="readTime">{{ item.readTime }}</span></span>
             </div>

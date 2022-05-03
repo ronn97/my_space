@@ -42,15 +42,15 @@ export default defineComponent({
             const modeMap = {
                 light: _ => {
                     currentTheme.value = 'light'
-                    addBodyAttr('light', 'night')
+                    addBodyAttr('light', 'dark')
                 },
                 dark: _ => {
                     currentTheme.value = 'dark'
-                    addBodyAttr('night', 'light')
+                    addBodyAttr('dark', 'light')
                 },
                 'no-preference': _ => {
                     currentTheme.value = 'light'
-                    addBodyAttr('light', 'night')
+                    addBodyAttr('light', 'dark')
                 }
             }
             return modeMap[mode]()

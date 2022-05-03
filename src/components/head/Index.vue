@@ -46,7 +46,7 @@ console.log(items.value)
     display: flex;
     justify-content: space-between;
     z-index: 10;
-    background-color: #fff;
+    background-color: var(--color-bg);
 
     .head_right,
     .head_left {

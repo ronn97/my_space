@@ -27,23 +27,5 @@ export default defineComponent({
 </script>
 
 <template>
-    <div class="template-container markdown-body" v-html="str"> </div>
+    <div class="template-container markdown-body main_cont" v-html="str"> </div>
 </template>
-
-
-<style lang="scss">
-.markdown-body {
-    box-sizing: border-box;
-    min-width: 200px;
-    max-width: 100%;
-    margin: 0px auto;
-    font-size: 0.2rem;
-    padding: 15px 45px;
-}
-
-@media (max-width: 767px) {
-    .markdown-body {
-        padding: 15px;
-    }
-}
-</style>

@@ -2,10 +2,12 @@
 import { defineComponent, reactive } from 'vue'
 import Head from '@/components/head/Index.vue';
 import Foot from '@/components/foot/Index.vue';
+import BackInteract from '@/components/backinteract/Index.vue';
 export default defineComponent({
   components: {
     Head,
-    Foot
+    Foot,
+    BackInteract
   },
 
   // setup() {
@@ -24,6 +26,7 @@ export default defineComponent({
       <router-view></router-view>
     </div>
     <Foot />
+    <BackInteract />
   </div>
 </template>
 

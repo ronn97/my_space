@@ -1,5 +1,6 @@
 
-// import Router from 'vue-router';
+import NProgress from 'nprogress';
+import 'nprogress/nprogress.css';
 import { createRouter, createWebHashHistory } from 'vue-router'
 
 // Vue.use(Router)
@@ -31,13 +32,23 @@ const routes = [{
 
 }]
 
-// const router = new Router({
-//     mode: 'hash',
-//     routes
-// })
 const router = createRouter({
     history: createWebHashHistory(),
     routes
 })
+
+NProgress.configure({ showSpinner: false })
+
+//在路由跳转前用NProgress.start()标记下进度条开始
+router.beforeEach((to, from, next) => {
+  NProgress.start()
+  next()
+});
+
+//在路由跳转后用NProgress.done()标记下结束
+router.afterEach(() => {
+  NProgress.done()
+})
+
 
 export default router

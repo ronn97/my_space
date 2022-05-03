@@ -1,3 +1,24 @@
+@import url('light.css');
+@import url('dark.css');
 body {
   font-size: 14px;
+  min-height: 100vh;
+  background-color: var(--color-bg);
+  color: var(--color-contrast-high);
+}
+body a {
+  color: unset;
+}
+body .main_cont {
+  box-sizing: border-box;
+  min-width: 200px;
+  max-width: 100%;
+  margin: 0px auto;
+  font-size: 0.2rem;
+  padding: 15px 45px;
+}
+@media (max-width: 767px) {
+  body .main_cont {
+    padding: 15px;
+  }
 }
