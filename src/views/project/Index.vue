@@ -5,7 +5,7 @@ import ProjectItem from './projectItem/Index.vue';
 const Project = Model.readByKey('pro');
 </script>
 <template>
-    <div class="about main_cont">
+    <div class="main_cont">
         <div class="list-container max-full" :key="index" v-for="(pro, index) in Project">
             <h2> {{ pro.capName }}</h2>
             <div class="catgory_item">

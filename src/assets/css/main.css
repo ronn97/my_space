@@ -2,9 +2,13 @@
 @import url('dark.css');
 body {
   font-size: 14px;
-  min-height: 100vh;
   background-color: var(--color-bg);
   color: var(--color-contrast-high);
+}
+body #app {
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
 }
 body a {
   color: unset;

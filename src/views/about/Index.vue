@@ -12,7 +12,7 @@ readmd(target => {
 
 </script>
 <template>
-    <div class="about  markdown-body">
+    <div class="about main_cont markdown-body">
         <div v-html="mineRef"></div>
     </div>
 </template>
