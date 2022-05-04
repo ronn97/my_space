@@ -31,6 +31,17 @@ const Projects = reactive({
                 }
             ]
         },
+        {
+            capName: '个人简历',
+            capList: [
+                {
+                    icon: Calendar,
+                    name: '我的简历',
+                    desc: '一个Html关于我的简历',
+                    url: 'https://htmlpreview.github.io/?https://raw.githubusercontent.com/ronn97/my_space/master/src/assets/datas/project/resume.html'
+                }
+            ]
+        },
     ]
 })
 
