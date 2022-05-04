@@ -132,6 +132,10 @@ export default defineComponent({
     background-color: var(--color-bg);
     color: var(--color-contrast-high);
 
+    #drag_wrap {
+        touch-action: none;
+    }
+
     .btn {
         margin-left: 0.15rem;
         display: flex;
