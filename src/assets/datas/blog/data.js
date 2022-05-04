@@ -1,37 +1,3 @@
-// import { defineComponent, reactive } from 'vue';
-// import Calendar from '@/assets/img/Calendar.vue';
-
-// const Blogs = reactive({
-//     pro: [
-//         {
-//             capName: '进行中的',
-//             capList: [
-//                 {
-//                     icon: Calendar,
-//                     name: 'Chrome-Ads',
-//                     desc: '一个百度搜索过滤广告插件',
-//                     url: 'https://github.com/NemophilistWatermelon/chrome-ads'
-//                 },
-//                 {
-//                     icon: Calendar,
-//                     name: 'JSON2EXCEL',
-//                     desc: '一个百度搜索过滤广告插件',
-//                     url: 'https://github.com/NemophilistWatermelon/chrome-ads'
-//                 }
-//             ]
-//         },
-//     ]
-// })
-
-
-// export default Blogs
-
-/**
- *  WebSite: {
- *    SubTitle
- *  }
- * 
- */
 import moment from 'moment';
 
 const Template = function (o) {
@@ -62,11 +28,11 @@ const tip2 = {
     children: [
         {
             ...new Template({
-                path: 'start',
-                title: 'First Note!',
-                desc: '一个项目关于Note',
+                path: 'resume',
+                title: 'Resume',
+                desc: '一个MD关于My Resume',
                 created: moment().format('YYYY-MM-DD'),
-                readTime: '1min'
+                readTime: '10min'
             })
         }
     ]
