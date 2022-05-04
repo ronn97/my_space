@@ -22,7 +22,7 @@ const routes = [{
         },
         {
             path: '/blog/:md',
-            component: () => import('@/views/blog/blogMd/Index.vue'),
+            component: () => import('@/views/blog/blogroute/Index.vue'),
         },
         {
             path: '/project',

@@ -2,7 +2,7 @@
 import { ref } from 'vue';
 const mineRef = ref()
 const readmd = async function (callback) {
-    callback(await import('./about.md'))
+    callback(await import('@/assets/datas/about/about.md'))
 }
 
 readmd(target => {

@@ -1,38 +1,75 @@
 <script >
 import { defineComponent, reactive } from 'vue';
-import moment from 'moment';
+import Blogs from '@/assets/datas/blog/index.js';
 
 export default defineComponent({
     setup() {
-        const mdRouter = reactive({
-            BlogRoute: [
-                {
-                    path: 'start',
-                    title: '创建Vue3模版',
-                    desc: '一个项目关于创建Vue-Vite-template',
-                    data: moment().format('YYYY-MM-DD'),
-                    readTime: '1min'
-                }
-            ]
+        const BlogDatas = reactive({
+            length: Blogs.getLength(),
+            titles: Blogs.getTitles(),
+            currentBlog: [],
+            currentIndex: 0,
         })
+        const getChildByIndex = function (index) {
+            BlogDatas.currentIndex = index
+            BlogDatas.currentBlog = Blogs.getChildByIndex(index)
+        };
+        getChildByIndex(BlogDatas.currentIndex);
+
+        console.log(BlogDatas.titles)
 
         return {
-            mdRouter
+            BlogDatas,
+            getChildByIndex
         }
     },
 })
 </script>
 <template>
     <div class="blogs main_cont">
-        <!-- this is blog -->
-        <Title title="Blogs" />
-        <div class="post-item" v-for="(item, index) in mdRouter.BlogRoute" :key="index">
-            <RouterLink :to="'/blog/' + item.path">
-                <h2> {{ item.title }}</h2>
-            </RouterLink>
-            <div class="other">
-                <span>{{ item.data }} · <span class="readTime">{{ item.readTime }}</span></span>
+        <div v-if="BlogDatas.length > 1" class="tabs">
+            <div class="tab_title" :class="{ active: (index === BlogDatas.currentIndex) }"
+                v-for="(title, index) in BlogDatas.titles" :key="index" @click="getChildByIndex(index)">
+                <div>{{ title }}</div>
+            </div>
+        </div>
+        <div v-if="BlogDatas?.currentBlog?.length" class="tab_cont">
+            <div v-for="(child, idx) in BlogDatas?.currentBlog" :key="idx">
+                <RouterLink :to="'/blog/' + child.path">
+                    <h2> {{ child.title }}</h2>
+                </RouterLink>
+                <div>{{ child.desc }}</div>
+                <div class="other">
+                    <span>{{ child.created }} · <span class="readTime">{{ child.readTime }}</span></span>
+                </div>
             </div>
         </div>
     </div>
 </template> 
+
+<style scoped lang="scss">
+.blogs {
+    opacity: 1;
+    color: #fff;
+
+    .tabs {
+        display: flex;
+        font-size: 0.24rem;
+        font-weight: 500;
+
+        .tab_title {
+            margin-right: 0.1rem;
+            cursor: pointer;
+        }
+
+        .active {
+            text-decoration: underline;
+        }
+
+    }
+
+    .tab_cont {
+        margin-top: 0.1rem
+    }
+}
+</style>

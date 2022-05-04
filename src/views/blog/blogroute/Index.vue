@@ -9,8 +9,9 @@ export default defineComponent({
         const str = ref();
 
         const unMdByRoute = async function (callback) {
-            const mdFile = import.meta.glob('./*.md')
-            const mdhtml = mdFile[`./${route.params.md}.md`]()
+            const mdFile = import.meta.glob('@/assets/datas/blog/*.md');
+            const path = `../../../assets/datas/blog/${route.params.md}.md`;
+            const mdhtml = mdFile[path]()
             callback(await mdhtml)
             // const mdhtml = import(/* @vite-ignore */ `./${route.params.md}.md`)
             // callback(await mdhtml)
