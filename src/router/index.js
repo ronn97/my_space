@@ -4,9 +4,6 @@ import 'nprogress/nprogress.css';
 import { createRouter, createWebHashHistory } from 'vue-router'
 
 // Vue.use(Router)
-
-console.log(createRouter, 'createRouter')
-console.log(createWebHashHistory, 'createWebHashHistory')
 const routes = [{
     path: '/',
     component: () => import('@/views/Main.vue'),

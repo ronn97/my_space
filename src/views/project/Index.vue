@@ -22,6 +22,7 @@ const Project = Model.readByKey('pro');
 
     .list_item {
         margin-bottom: 0.2rem;
+        width: 100%;
     }
 
     h2 {
@@ -32,6 +33,11 @@ const Project = Model.readByKey('pro');
         display: flex;
         justify-content: space-between;
         margin-top: 0.1rem;
+        flex-wrap: wrap;
+
+        a {
+            flex: 0 0 50%;
+        }
     }
 }
 </style>
